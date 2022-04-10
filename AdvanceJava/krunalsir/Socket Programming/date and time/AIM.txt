@@ -1,0 +1,3 @@
+Aim: Implementation of Iterative Server using connection oriented protocol 
+in which the server sends its current date & time to the client as soon as a client sends a request to the server. The client receives it and prints it on to its own standard output. (Using java socket programming) 
+

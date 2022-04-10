@@ -1,0 +1,114 @@
+
+<html>
+    <head>
+        <title>demo of cookie</title>
+            </head>
+    <body>
+        <form method="post" action="mycookieservlet">
+            <h3>enter the value for my cookie:</h3>
+            <input type="text" name="text_data">
+            <input type="submit" value="submit">
+            
+            
+        </form>
+    </body>
+</html>
+-----------------------------------------------------------
+<servlet>
+        <servlet-name>getcookieservlet</servlet-name>
+        <servlet-class>test.getcookieservlet</servlet-class>
+                
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getcookieservlet</servlet-name>
+        <url-pattern>/getcookieservlet</url-pattern>
+        
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>mycookieservlet</servlet-name>
+        <servlet-class>test.mycookieservlet</servlet-class>
+                
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>mycookieservlet</servlet-name>
+        <url-pattern>/mycookieservlet</url-pattern>
+        
+    </servlet-mapping>
+-----------------------------------------------------------------
+
+
+package test;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+// for me it is LoginServlet ****************************
+
+public class mycookieservlet extends HttpServlet 
+{
+    public void doPost(HttpServletRequest req,HttpServletResponse res)throws IOException, ServletException
+    {
+        
+        
+        String txt_data=req.getParameter("text_data");
+        
+        Cookie cookie=new Cookie("My_Cookie",txt_data);
+        res.addCookie(cookie);
+        
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html");
+        
+        pw.println("<h2>my cookie has been set to:");
+        pw.println(txt_data);
+        pw.println("<br><br><br>");
+        pw.println("this page shows that the cookie has been added");
+        pw.close();
+             
+    }
+        
+    }
+----------------------------------------------------------------------------
+
+
+package test;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+public class getcookieservlet extends HttpServlet
+{
+    public void doGet(HttpServletRequest req,HttpServletResponse res)throws IOException,ServletException
+    {
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html");
+        
+        Cookie[] my_cookies=req.getCookies();
+        
+        pw.println("<b>");
+        int n=my_cookies.length;
+        
+        for(int i=0;i<n;i++)
+        {
+            String name=my_cookies[i].getName();
+            String value=my_cookies[i].getValue();
+            pw.println("name=" +name);
+            pw.println("and value=" +value);
+                        
+        }
+        pw.close();
+        
+        
+    }
+}

@@ -1,0 +1,62 @@
+
+
+<servlet>
+        
+        <servlet-name>servletconfig</servlet-name>
+        <servlet-class>test.servletconfig</servlet-class>
+        
+        <init-param>
+            <param-name>count</param-name>
+            <param-value>10</param-value>
+        </init-param>
+        
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>servletconfig</servlet-name>
+        <url-pattern>/servletconfig</url-pattern>
+        
+        
+    </servlet-mapping>
+-----------------------------------------------------------
+
+
+package test;
+
+import jakarta.servlet.GenericServlet;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+public class servletconfig extends GenericServlet 
+      
+{
+    public int count;
+    public void init(ServletConfig sc)
+    {
+       count=Integer.parseInt(sc.getInitParameter("count"));
+    }
+    
+    public void service(ServletRequest req,ServletResponse res)throws IOException,ServletException
+    {
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html");
+        
+        pw.println("value of count:"+count);
+        pw.close();
+        
+        
+    }
+    
+    public void destroy()
+    {
+        
+    }
+
+    
+    }
+

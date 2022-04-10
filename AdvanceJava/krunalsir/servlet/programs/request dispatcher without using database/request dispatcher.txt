@@ -1,0 +1,108 @@
+
+<html>
+    <head>
+        <title>demo for request dispatcher</title>
+        
+    </head>
+    <body>
+        <form action="validate" method="post">
+            User: <input type="text" name="user"> <br>
+            Password: <input type="password" name="pwd"> <br>
+            
+            <input type="submit" value="Submit">
+            
+            
+            
+            
+        </form>
+    </body>
+</html>
+----------------------------------------------------------------------------------------------
+<servlet>
+        <servlet-name>validate</servlet-name>
+        <servlet-class>test.validate</servlet-class>
+        
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>validate</servlet-name>
+        <url-pattern>/validate</url-pattern>
+        
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>MainPage</servlet-name>
+        <servlet-class>test.MainPage</servlet-class>
+        
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>MainPage</servlet-name>
+        <url-pattern>/MainPage</url-pattern>
+        
+    </servlet-mapping>
+ ----------------------------------------------------------------------------------------------
+validate.java
+
+
+
+package test;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+public class validate extends HttpServlet
+{
+    public void doPost(HttpServletRequest req,HttpServletResponse res)throws IOException,ServletException
+    {
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html");
+        
+        String name=req.getParameter("user");
+        String password=req.getParameter("pwd");
+        
+        if(password.equals("mypassword123"))
+        {
+            RequestDispatcher rd=req.getRequestDispatcher("MainPage");
+            rd.forward(req,res);
+        }
+        else
+        {
+            pw.println("<b>u have entered incorrect pwd</b>");
+            RequestDispatcher rd=req.getRequestDispatcher("index.html");
+            rd.include(req,res);
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------
+MainPage.java
+
+
+package test;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+public class MainPage extends HttpServlet
+{
+  public void doPost(HttpServletRequest req,HttpServletResponse res)throws IOException,ServletException
+    {
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html"); 
+        
+        
+        pw.println("<h2>welcome to main page</h2>");
+    }
+}
+

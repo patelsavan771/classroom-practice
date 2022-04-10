@@ -1,0 +1,15 @@
+create or replace procedure square_proc(x in number,y out number)
+as
+begin
+y:=x*x;
+end;
+/
+
+for execution:
+
+sql> variable square number;
+
+sql> execute square_proc(10,:square);
+
+sql> print square
+

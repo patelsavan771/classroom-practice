@@ -1,0 +1,51 @@
+index.html
+---------------------
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="add" method="get">
+            
+            Number1: <input type="text" name="no1"> <br> <br>
+            Number2: <input type="text" name="no2"> <br> <br>
+            
+            <input type="submit" name="btnadd" value="Add">
+        </form>
+    </body>
+</html>
+
+
+
+------------------------------------------
+add.java
+---------------------------------------
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class add extends HttpServlet {
+
+   
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try ( PrintWriter out = response.getWriter()) {
+
+            int a=Integer.parseInt(request.getParameter("no1"));
+            int b=Integer.parseInt(request.getParameter("no2"));
+            
+            out.println("addition is:"+(a+b));
+        }
+    }
+
+  
+    }
+
+}

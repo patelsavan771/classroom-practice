@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="5"> -->
+    <title>Event EX</title>
+</head>
+<body id="body">
+    <h1 onmouseover="this.style.color = 'yellow'" onmouseout="this.style.color='black'">Heading</h1>
+
+    <button onclick="showTime()">Time</button><br>
+    <!-- <p id="p1" style="display: none;"></p> -->
+    <p id="p1"></p>
+
+    <button onclick="bgRed()">Red</button>
+    <button onclick="bgGreen()">Green</button>
+
+
+    <script>
+        function showTime() {
+            d = new Date();
+            // alert(d);
+            document.getElementById('p1').style.display='block';
+            document.getElementById('p1').innerHTML = d;
+        }
+
+        function bgRed() {
+            document.getElementById('body').style.backgroundColor="red";
+        }
+        function bgGreen() {
+            document.getElementById('body').style.backgroundColor="green";
+        }
+    </script>
+
+</body>
+</html>

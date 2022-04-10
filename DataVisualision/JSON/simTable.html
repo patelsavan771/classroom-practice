@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SImple Table</title>
+    <style>
+        /* th {
+            background-color: brown;
+        }
+        tr {
+            background-color: rgb(178, 204, 31);
+        } */
+
+        thead {
+            background-color : rgb(133, 35, 35);
+        }
+
+        tbody {
+            background-color: rgb(228, 228, 74);
+        }
+
+        tfoot {
+            background-color: rgb(105, 105, 226);
+        }
+
+
+        table, th, td {
+            padding: 5px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        table {
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <table width="40%">
+        <thead>
+
+            <tr>
+                <th scope="col">Region</th>
+                <th scope="col">Sales</th>
+                <th scope="col">Mean</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+
+            <tr>
+                <th scope="row">North</td>
+                <td>10000</td>
+                <td>150</td>
+            </tr>
+            
+            <tr>
+                <th scope="row">south</td>
+                <td>30000</td>
+                <td>160</td>
+            </tr>
+            <tr>
+                <th scope="row">West</td>
+                <td>12500</td>
+                <td>142</td>
+            </tr>
+            <tr>
+                <th scope="row">East</td>
+                <td>25000</td>
+                <td>256</td>
+            </tr>
+            <tr>
+                <th scope="row">South-west</td>
+                <td>35000</td>
+                <td>300</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th scope="row">Sum</th>
+                <td>112500</td>
+                <td>1008</td>
+            </tr>
+        </tfoot>
+
+
+            
+        </table>
+    </body>
+    </html>

@@ -1,0 +1,4 @@
+
+
+	         CallableStatement cst=con.prepareCall("{call          addproc(?,?,?)}");
+	child interface of PreparedStatement		JDBC keyword	procedure name  parameters

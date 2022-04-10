@@ -1,0 +1,72 @@
+
+<html>
+
+    <body>
+
+        <form action="getdata" method="post">
+            
+            Enter first name:
+            <input type="text" name="fname"> <br>
+            
+            Enter last name:
+            <input type="text" name="lname"> <br>
+            
+            Enter Address:
+            <input type="text" name="address"> <br>
+            
+            Enter Phone no:
+            <input type="text" name="pno"> <br>
+            
+            <input type="submit" value="submit">
+                                
+            
+        </form>
+        
+        
+    </body>
+</html>
+--------------------------------------------------------------------------------------------------
+<servlet>
+        <servlet-name>getdata</servlet-name>
+        <servlet-class>test.getdata</servlet-class>
+        
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>getdata</servlet-name>
+        <url-pattern>/getdata</url-pattern>
+        
+    </servlet-mapping>
+-----------------------------------------------------------------------------------------------
+
+package test;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+public class getdata extends HttpServlet
+{
+    public void doPost(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+    {
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html");
+        
+        String FirstName=req.getParameter("fname");
+        String LastName=req.getParameter("lname");
+        String Address=req.getParameter("address");
+        String Phoneno=req.getParameter("pno");
+        
+        pw.println("<h4>First Name:"+FirstName+ "</h4>");
+        pw.println("<h4>Last Name:"+LastName+ "</h4>");
+        pw.println("<h4>Address:"+Address+ "</h4>");
+        pw.println("<h4>Phone no:"+Phoneno+ "</h4>");
+        
+        
+    }
+}
+

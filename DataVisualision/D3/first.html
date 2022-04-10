@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First D3</title>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+
+    <a href="">DV</a>
+    <div>hello world</div>
+    <div class="myclass">hello world2</div>
+    <div id="myid">hello world3</div>
+
+    <script>
+        d3.select('div').text('Data visualisaion');
+        
+        d3.select('.myclass').html("Hello World <span> from D3 </span>");
+
+        d3.select('.myclass').attr('style','color:green');
+        d3.select('.myclass').attr('style','font-size:25px');
+
+
+        d3.select('a').attr('href','https://d3js.org');
+        d3.select('a').attr('target','_blank');
+    </script>
+</body>
+</html>
+
+
+<!-- in console
+    d3.select('div').text();
+    d3.select('.myclass').text();
+    d3.select('#myid').text();
+
+
+-->

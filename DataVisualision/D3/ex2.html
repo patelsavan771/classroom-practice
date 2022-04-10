@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>idk</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+</head>
+
+<body>
+    <div>
+        <p>Data visualizasion</p>
+        <p>a</p>
+        <p>b</p>
+        <p>c</p>
+        <p>d</p>
+    </div>
+    <button onclick="myFunction()">change</button>
+
+    <script>
+
+        // d3.selectAll('p').each(function (p, j) {
+        //     d3.select(this).style("", style.backgroundColor = "black");
+
+        // });
+
+        d3.selectAll('p')
+            .each(function (d, i) {
+                d3.select(this)
+                    // .style('color', 'orange')
+                    .on('mouseover', function (d, i) {
+                        d3.select(this)
+                            .style('color', 'orange');
+                    });
+            });
+        d3.selectAll('p')
+            .each(function (d, i) {
+                d3.select(this)
+                    // .style('color', 'orange')
+                    .on('mouseout', function (d, i) {
+                        d3.select(this)
+                            .style('color', 'black');
+                    });
+            });
+
+        function myFunction() {
+
+            // d3.selectAll("p").text("D3.JS");
+
+
+            d3.selectAll("p").each(function (p, j) {
+                d3.select(this).text("D3JS " + j);
+            });
+
+
+
+
+
+
+            // d3.selectAll('p').remove();
+            // for(i = 0; i < 5; i++) {
+            //     d3.select('div').append('p').text('D3JS ' + i);
+            // }
+
+
+        }
+    </script>
+</body>
+
+</html>

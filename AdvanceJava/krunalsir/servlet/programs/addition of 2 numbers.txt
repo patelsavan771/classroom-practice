@@ -1,0 +1,57 @@
+Index.html
+<html>
+    
+    <body>
+
+        <form action="addition" method="post">
+            Enter number1: <input type="text" name="no1"> <br>
+            Enter number2: <input type="text" name="no2"> <br>
+            
+            <input type="submit" value="submit">
+            
+        </form>
+        
+        
+        
+    </body>
+</html>
+Web.xml
+
+
+<servlet>
+        
+        <servlet-name>addition</servlet-name>
+        <servlet-class>test.addition</servlet-class>
+        
+    </servlet>    
+    <servlet-mapping>        
+        <servlet-name>addition</servlet-name>
+        <url-pattern>/addition</url-pattern>
+            </servlet-mapping>
+----------------------------------------------------------------------------------------------------------------------------------------
+Addition.java
+
+
+package test;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class addition extends HttpServlet
+{
+    public void doPost(HttpServletRequest req,HttpServletResponse res)throws IOException,ServletException
+    {
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html");        
+        int a=Integer.parseInt(req.getParameter("no1"));
+        int b=Integer.parseInt(req.getParameter("no2"));        
+        pw.println("addition of 2 numner is:" +(a+b));
+        
+    }
+    
+}
+

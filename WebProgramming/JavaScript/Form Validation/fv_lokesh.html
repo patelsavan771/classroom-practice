@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validate form</title>
+</head>
+<body>
+    <form name="myForm" onsubmit="return validate()">
+        Name : <input type="text" name="name" id="name"><br>
+        Password: <input type="text" name="password" id="password"><br>
+        First Name : <input type="text" name="FirstName" id="FirstName"><br>
+        Phone No. : <input type="text" name="phone" id="phone"><br>
+        Email : <input type="text" name="email" id="email"><br>
+        <input type="submit" value="Submit">
+       
+    </form>
+    <button onclick="validate()">tryIt</button>
+
+
+    <script>
+        function validate() {
+            // patEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,})/;
+           var u = document.getElementById("name");
+            // patName = /^[A-Za-z]+$/;
+            patName= /[*@!#%&()^~{}]+/; //takes minimum one special character
+            var p=document.getElementById("password");
+            patPassword=/[A-z0-9]{8,}+/;//takes minimum 8 character
+            var f= document.getElementById("FirstName");
+            patFirstName=/[A-z]{1,}+/;//takes minimum 1 and only alphabets
+            var w= document.getElementById("phone");
+            patPhone = /^\d{10}$/;//takes 10 digits
+           var v= document.getElementById("email");
+            patEmail = /[A-z0-9.]+@[A-z0-9.]+\.([A-z]{2,})/i;//takes a valid email type
+           
+           
+            if(!patName.test(u.value)) {
+                alert("enter special character in name");
+                return false;
+            }
+            else if(!patPassword.test(p.value)) {
+                alert("enter minimum 8 characters in password");
+                return false;
+                 
+            }
+            else if(!patFirstName.test(f.value)){
+                alert("enter only alphabets");
+                return false;
+
+            }
+            else if(!patPhone.test(w.value)) {
+                alert("enter valid 10 digit mobile number");
+                return false;
+                 
+            }
+            
+            else if(!patEmail.test(v.value)) {
+                alert("enter valid email");
+                return false;
+                 
+            }
+            else{
+                alert("successful");
+                return false;
+
+            }
+
+        }
+    </script>
+</body>
+</html>

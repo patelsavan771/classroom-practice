@@ -1,0 +1,40 @@
+<!--  NOV 2021
+write js that handls following events:
+
+1. give key code from the key pressed. 
+2.the script shoud give message that "Vovle is pressed" if vovle is pressed.
+3.bg shoud change to red after releasing the pressed key.
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEY Events</title>
+</head>
+<body onkeyup="f1(this)" onkeydown="f2(event)" id="body">
+    <div></div>
+    
+
+    <script>
+        function f1(obj) {
+            obj.style.backgroundColor = "red";
+        }
+        function f2(e) {
+            alert(e.keyCode);
+            n = e.keyCode;
+
+            if(n == 65 || n == 69 || n == 73 || n ==  79 || n ==  85 ) {
+                obj = document.getElementById('body').innerHTML = "vowel pressed";
+            }
+            else {
+            obj = document.getElementById('body').innerHTML = "key pressed";
+            }
+        }
+    </script>
+</body>
+</html>

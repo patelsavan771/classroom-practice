@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbuilt methods</title>
+
+    <script>
+        //Math is an Inbuilt class in js
+        var x = -9.1;
+        var y = 5.2;
+
+        document.write("Math Class methods : " + "\n");
+        document.write("abs(" + x +") :" + Math.abs(x) + "<br>");
+        document.write("abs(" + y +") :" + Math.abs(y) + "\n");
+
+        document.write("ceil(" + x + ") : " + Math.ceil(x) + "\n");
+        document.write("ceil(" + y + ") : " + Math.ceil(y) + "\n");
+
+        document.write(Math.pow(2,3));
+
+
+
+        //String :
+
+        s1 = "hello";
+        console.log(s1.charAt(1));
+        console.log(s1.charCodeAt(1));
+
+
+
+        //Date:
+
+        var d = new Date();
+        console.log(d);
+        console.log(d.getMonth());
+        console.log(d.getDay());
+        console.log(d.getDate());
+
+        console.log(d.getHours());
+        console.log(d.getMinutes());
+        console.log(d.getFullYear());
+
+
+        // window
+
+        // google = window.open("https://www.google.com");
+        // google.close();
+
+        n = window.prompt("Eneter your number : ");
+
+        document.write("<br><br>" + n);
+
+
+
+
+    </script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>

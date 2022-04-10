@@ -1,0 +1,20 @@
+SQL> select * from emp;
+
+    EMP_NO EMP_NAME   EMP_SALARY
+---------- ---------- ----------
+         1 krunal           1000
+         2 panchal          2000
+         3 rima             3000
+
+SQL> create or replace procedure getempinfo(eno in number,esal out number)
+  2  as
+  3  begin
+  4  select emp_salary into esal from emp where emp_no=eno;
+  5  end;
+  6  /
+
+Procedure created.
+
+SQL> commit;
+
+Commit complete.

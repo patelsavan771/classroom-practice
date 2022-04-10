@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+</head>
+<body>
+    <form name='myForm' action="xyz.html" onsubmit="return validate()" method="get" >
+        <input type="text" name="fname" id="fname">
+        <input type="submit" value="click me">
+    
+    </form>
+
+    <script>
+        function validate() {
+            x = document.myForm.fname.value;
+            if(isNaN(x) || (x < 1 || x > 10)) {
+                alert('enter number between 1 to 10');
+                return false;
+            }
+            
+            return true;
+        }
+    </script>
+</body>
+</html>

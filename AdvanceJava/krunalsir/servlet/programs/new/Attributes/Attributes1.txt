@@ -1,0 +1,87 @@
+
+package test;
+
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+public class getattributedemo extends HttpServlet
+{
+    public void service(HttpServletRequest req, HttpServletResponse res)throws IOException,ServletException
+    {
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html");
+        
+        ServletContext sct=req.getServletContext();
+        Integer cval=(Integer)sct.getAttribute("cval");
+        Integer rval=(Integer)req.getAttribute("rval");
+        
+        pw.println("----display from getattributeservlet:");
+        pw.println("<br> cval:" +cval+ "</br>");
+        pw.println("<br> rval:" +rval+ "</br>");
+        pw.close();
+    }
+}
+------------------------------------------------------------
+
+
+package test;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+public class setattributedemo extends HttpServlet
+{
+    public void service(HttpServletRequest req, HttpServletResponse res)throws IOException,ServletException
+    {
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html");
+        
+        ServletContext sct=req.getServletContext();
+        sct.setAttribute("cval", 1200);
+        req.setAttribute("rval", 1100);
+        RequestDispatcher rd=req.getRequestDispatcher("getattributedemo");
+        rd.forward(req, res);
+        pw.close();
+    }
+}
+---------------------------------------------------------------------------------
+
+<servlet>
+        
+        <servlet-name>setattributedemo</servlet-name>
+        <servlet-class>test.setattributedemo</servlet-class>
+        
+            
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>setattributedemo</servlet-name>
+        <url-pattern>/setattributedemo</url-pattern>
+            
+    </servlet-mapping>
+    
+     <servlet>
+        
+        <servlet-name>getattributedemo</servlet-name>
+        <servlet-class>test.getattributedemo</servlet-class>
+                 
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>getattributedemo</servlet-name>
+        <url-pattern>/getattributedemo</url-pattern>
+            
+    </servlet-mapping>

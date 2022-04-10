@@ -1,0 +1,86 @@
+setattribute.java
+
+
+package test;
+
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+public class setattribute extends HttpServlet
+{
+    public void doGet(HttpServletRequest req,HttpServletResponse res)throws IOException,ServletException
+    {
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html");
+        
+        ServletContext context=getServletContext();
+        context.setAttribute("name","parth");
+        
+        pw.println("<h2>welcome!!!</h2>");
+        pw.println("<a href='getattribute'>click here to continue..</a>");
+        pw.close();
+        
+        
+        
+    }
+}
+------------------------------------------------------------------------------------------------------
+getattribute.java
+
+package test;
+
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+public class getattribute extends HttpServlet
+{
+    public void doGet(HttpServletRequest req,HttpServletResponse res)throws IOException,ServletException
+    {
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html");
+        
+        ServletContext context=getServletContext();
+        String n=(String)context.getAttribute("name");
+        
+        pw.println("<b>welcome "+n+"</b>");
+        pw.close();
+        
+    }
+}
+-----------------------------------------------------------------------------------------------
+
+<servlet>
+        <servlet-name>setattribute</servlet-name>
+        <servlet-class>test.setattribute</servlet-class>
+        
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>setattribute</servlet-name>
+        <url-pattern>/setattribute</url-pattern>
+        
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>getattribute</servlet-name>
+        <servlet-class>test.getattribute</servlet-class>
+        
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>getattribute</servlet-name>
+        <url-pattern>/getattribute</url-pattern>
+        
+    </servlet-mapping>

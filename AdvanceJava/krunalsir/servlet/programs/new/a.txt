@@ -1,0 +1,83 @@
+<body>
+<a href="login.html">login</a>
+<a href="logoutservlet">logout</a>
+<a href="profileservlet">profile</a>
+
+</body>
+
+
+------------------------------------
+login.html
+
+<form action="loginservlet" method="post">
+name:<input type="text" name="name"> <br>
+password:<input type="password" name="password"> <br>
+<input type="submit" value="login">
+</form>
+
+--------------------------------------------
+loginservlet.java
+
+loginservlet extends httpservlet{
+
+doPose()
+{
+
+.....
+....
+req.getRequestDispatcher("link.html").include(req,res);
+
+String name=req.getParameter("name");
+String password=req.getParameter("password");
+
+if(password.equals("admin123"))
+{
+pw.println("u are successfully logged in");
+pw.println("<br>welcome " +name);
+
+Cookie c=new Cookie("name",name);
+res.addcookie(c);
+}
+else
+{
+pw.println();
+}
+---------------------------------------------
+profileservlet.java
+
+doGet()
+{
+req.getRequestDispatcher("link.html").include(req,res);
+
+Cookie c[]=req.getCookies();
+if(c!=null)
+{
+String name=c[0].getValue();
+if(!name.equals("")||name!=null)
+{
+pw.println("<b>welcome to profile</b>");
+pw.println("<b>welcome," +name);
+}
+}
+else
+{
+pw.println("please login first");
+req.getRequestDispatcher("login.html").include(req,res);
+}
+
+}
+}
+-------------------------------------------------
+logoutservlet.java
+
+doGet()
+{
+req.getRequestDispatcher("link.html").include(req,res);
+
+Cookie c=new Cookie("name"," ");
+c.setMaxAge(0);
+res.asscookie(c);
+
+pw.println("u are successsfully logout");
+}
+}

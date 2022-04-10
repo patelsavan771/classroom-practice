@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+
+    <script>
+        a = 2;
+        b = 12;
+
+        // callback with args
+        // function add(a, b) {
+        //     document.getElementById('p1').innerHTML = a + b;
+        // }
+
+        // setInterval(function() {
+        //     add(a++,b++);
+        // }, 300);
+
+
+        // without args
+        // var x = document.getElementById("h1").style.fontSize;
+        x = 25;
+        flag = 0;
+        // 0 -> increament
+        // 1 -> decreament
+        function dec() {
+            if(x == 25) {
+                flag = 0;
+                document.getElementById("h1").style.color = "red";
+            }
+            document.getElementById("h1").style.fontSize = x-- + "px";
+        }
+        function increaseFont() {
+            if (x == 50) {
+                flag = 1;
+                document.getElementById("h1").style.color = "blue";
+
+            }
+            document.getElementById("h1").style.fontSize = x++ + "px";
+        }
+
+        function changeFont() {
+            if(flag == 0) {
+                increaseFont();
+            }
+            else if(flag == 1) {
+                dec();
+            }
+            
+        }
+        setInterval(changeFont, 200);
+
+
+    </script>
+</head>
+
+<body>
+    <h1 id="h1" style="font-size:20px;text-align: center;">GTU</h1>
+    <p id="p1"></p>
+</body>
+
+</html>

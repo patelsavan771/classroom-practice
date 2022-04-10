@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Manipulation</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <script>
+        
+        b = '<br>'
+        
+        var data = [
+            {key : "01", value : "100"},
+            {key : "02", value : "200"},
+            {key : "03", value : "300"},
+        ];
+        console.log(data);   
+
+
+        //min/max of values:
+        document.write('Min : ' + d3.min(data, function(d) {
+            return d.value;
+        }) + '<br>');
+        
+        document.write('Max : ' + d3.max(data, function(d) {
+            return d.value;
+        }) + '<br>');
+        
+        // min/max of keys:
+        document.write('max key : ' + d3.max(data, (d) => {
+            return d.key;
+        }) + '<br>');
+
+        document.write('min key : ' + d3.min(data, (d) => {
+            return d.key;
+        }) + '<br>');
+
+
+
+        var myArray = [12, 9, 56, 24, 90];
+        document.write(myArray);
+        
+        //access the first element of array
+        document.write("<br>First Element is : " + myArray[0]);
+        
+        //access the last element of array
+        document.write("<br>Last Element is : " + myArray[myArray.length - 1]);
+
+        //remove last element
+        myArray.pop();
+        document.write('<br>' + myArray);
+
+        myArray.push(222);
+        document.write('<br>Updated after push(101) : ' + myArray);
+
+        // index of element
+
+
+
+        //SORTING :
+
+
+        var sortedArr = myArray.sort();
+        document.write('<br>' + sortedArr);
+
+        var desc = myArray.sort((a,b) => b - a);
+        document.write('<br>' + desc);
+        
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

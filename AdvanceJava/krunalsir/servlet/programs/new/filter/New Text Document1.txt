@@ -1,0 +1,152 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+        
+        <h1><a href="profileservlet">go to profile servlet</a> </h1>
+        <h1><a href="orderservlet">go to order servlet</a> </h1>
+        </div>
+    </body>
+</html>
+------------------------------------------------------------
+
+<servlet>
+        <servlet-name>orderservlet</servlet-name>
+        <servlet-class>test.orderservlet</servlet-class>
+                
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>orderservlet</servlet-name>
+        <url-pattern>/orderservlet</url-pattern>
+        
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>profileservlet</servlet-name>
+        <servlet-class>test.profileservlet</servlet-class>
+                
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>profileservlet</servlet-name>
+        <url-pattern>/profileservlet</url-pattern>
+        
+    </servlet-mapping>
+    
+    <filter>
+        <filter-name>myfilter</filter-name>
+        <filter-class>test.myfilter</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>myfilter</filter-name>
+        <url-pattern>/profileservlet</url-pattern>
+        <url-pattern>/orderservlet</url-pattern>
+    </filter-mapping>
+    
+-------------------------------------------------------------------------------
+
+
+package test;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+public class profileservlet extends HttpServlet
+{
+    public void doGet(HttpServletRequest req, HttpServletResponse res)throws IOException ,ServletException
+    {
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html");
+        
+        System.out.println("profile servlet executed..");
+        
+        pw.println("<html>");
+        pw.println("<head>");
+        pw.println("<title>servlet profileservlet</title>");
+        pw.println("</head>");
+        pw.println("<body>");
+        pw.println("<h1>welcome to profile page</h1>");
+        pw.println("<h1>this is profile page</h1>");    
+        pw.println("</body>");
+        pw.println("</html>");
+    }
+}
+-------------------------------------------------------------------------
+
+
+package test;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class orderservlet extends HttpServlet
+{
+    public void doGet(HttpServletRequest req, HttpServletResponse res)throws IOException,ServletException
+    {
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html");
+        
+        System.out.println("order servlet executed..");
+        pw.println("<html>");
+        pw.println("<head>");
+        pw.println("<title>servlet orderservlet</title>");
+        pw.println("</head>");
+        pw.println("<body>");
+        pw.println("<h1>servlet orderservlet at " + req.getContextPath() + "</h1>");
+           
+        pw.println("</body>");
+        pw.println("</html>");
+    }
+}
+-------------------------------------------------------------------------
+
+
+package test;
+
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.FilterConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import java.io.IOException;
+
+
+public class myfilter implements Filter
+{
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+        
+    }
+
+    @Override
+    public void doFilter(ServletRequest sr, ServletResponse sr1, FilterChain fc) throws IOException, ServletException {
+        System.out.println("before servlet");
+        
+        fc.doFilter(sr,sr1);
+        System.out.println("after servlet");
+    }
+
+    @Override
+    public void destroy() {
+        
+    }
+    
+}
+
+

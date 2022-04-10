@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .current-row {
+            background-color: yellow;
+        }
+
+        .current-col {
+            background-color: coral;
+        }
+
+        th {
+            background-color: rgb(133, 35, 35);
+        }
+
+        tr {
+            background-color: rgb(184, 209, 44);
+        }
+
+        tr:hover {
+            background-color: rgb(210, 223, 138);
+        }
+
+
+        table,
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        table {
+            margin: auto;
+            width: 40%;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js -->
+    <!-- <script scr="http://code.jquery.com/jquery-1.10.2.js"></script> -->
+
+    <script>
+        $(document).ready(function () {
+            $('.table-row').hover(function () {
+                $(this).addClass('current-row');
+
+            }, function () {
+                $(this).removeClass('current-row');
+            });
+        });
+
+
+        $('th').hover(function () {
+            var index = $(this).index();
+            $('th.table-header, td').filter(
+                "nth-child(" + (index + 1) + ")").addClass('current-col')
+                , function () {
+                    var index = $(this).index();
+
+                }
+        });
+    </script>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <th class="table-header">no.</th>
+            <th class="table-header">Region</th>
+            <th class="table-header">Sales</th>
+        </tr>
+
+        <tr class="table-row">
+            <td>1</td>
+            <td>India</td>
+            <td>1000</td>
+        </tr>
+        <tr class="table-row">
+            <td>2</td>
+            <td>Canada</td>
+            <td>800</td>
+        </tr>
+        <tr class="table-row">
+            <td>3</td>
+            <td>USA</td>
+            <td>500</td>
+        </tr>
+        <tr class="table-row">
+            <td>4</td>
+            <td>Pakistan</td>
+            <td>450</td>
+        </tr>
+
+
+    </table>
+
+</body>
+
+</html>

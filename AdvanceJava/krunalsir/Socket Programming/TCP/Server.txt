@@ -1,0 +1,42 @@
+import java.io.*;
+import java.net.*;
+
+class Server
+{
+	public static void main(String args[])throws Exception
+	{
+
+		System.out.println("Server started..");
+			
+		ServerSocket ss=new ServerSocket(5555);
+		while(true)
+		{
+	
+		Socket s=ss.accept();	
+
+		InputStreamReader is1=new InputStreamReader(s.getInputStream());
+		BufferedReader client_input= new BufferedReader(is1);
+
+		InputStreamReader is=new InputStreamReader(System.in);
+		BufferedReader server_input= new BufferedReader(is);	
+			
+
+		String client_str,server_str;		
+
+		OutputStreamWriter os=new OutputStreamWriter(s.getOutputStream());
+		PrintWriter pw= new PrintWriter(os);
+		pw.println(client_str);
+		pw.flush();
+		
+		
+		server_str=server_input.readLine();
+
+			
+		System.out.println("client_str");
+
+		
+		}		
+	}
+	
+  
+}

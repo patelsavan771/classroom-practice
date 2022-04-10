@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script scr = "https://code"></script>
+    <title>First</title>
+</head>
+
+<body>
+    <script>
+        var jsonObj = {
+            "sales": [
+                { "region": "north", "emp": 150, "amount": 15000 },   //0 indexing
+                { "region": "south", "emp": 300, "amount": 25000 },   //1
+                { "region": "west", "emp": 250, "amount": 30000 },    //2
+            ]
+        };
+
+        // // accessing jsonObj elements
+        // var theAmt = jsonObj.sales[0].amount;
+        // var theRegion = jsonObj.sales[1].region;
+        // var theEmp = jsonObj.sales[2].emp;
+
+        // document.write("amount : " + theAmt + "<br>Region : " + theRegion + "<br>Emp : " + theEmp);
+
+        // alert("amount : " + theAmt + "Region : " + theRegion + "Emp : " + theEmp);
+
+        $each(jsonObj.sales, function (k, v) {      //key , value
+            document.write("Region : " + v.region + "<br>");
+        });
+
+
+        // jsonObj.forEach((item) => {
+        //     console.log('ID: ' + item.region);
+        //     console.log('MSG: ' + item.emp);
+        //     console.log('TID: ' + item.);
+        //     console.log('FROMWHO: ' + item.fromWho);
+        // });
+
+        for(i = 0; i < jsonObj.sales.length; i++) {
+            // document.write("Region : " + jsonObj.sales[i].region + "<br>");
+            document.write("<br><br>amount : " + jsonObj.sales[i].amount + "<br>Region : " + jsonObj.sales[i].region + "<br>Emp : " + jsonObj.sales[i].emp);
+
+        }
+    </script>
+ </body>
+
+</html>

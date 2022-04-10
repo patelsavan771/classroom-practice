@@ -1,0 +1,57 @@
+
+package test;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+public class athentication extends HttpServlet
+{
+    public void doGet(HttpServletRequest req,HttpServletResponse res)throws IOException,ServletException
+    {
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html");
+        
+        String username=req.getParameter("uname");
+        String password=req.getParameter("pwd");
+        
+        if(("krunal".equals(username))&&("1234".equals(password)))
+            pw.println("welcome" +username);
+        else
+          pw.println("invalid username");
+        
+        
+    }
+    
+}
+-------------------------------------------------------------------------------------------------------
+<servlet>
+        <servlet-name>athentication</servlet-name>
+        <servlet-class>test.athentication</servlet-class>
+        
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>athentication</servlet-name>
+        <url-pattern>/athentication</url-pattern>
+        
+    </servlet-mapping>
+
+-----------------------------------------------------------------------------------------------------------
+
+<html>                 
+    
+    <body>
+        <form action="athentication" method="get">
+            User name: <input type="text" name="uname"> <br>
+            Password: <input type="password" name="pwd"> <br>
+            
+            <input type="submit" value="submit">
+            
+        </form>
+    </body>
+</html>

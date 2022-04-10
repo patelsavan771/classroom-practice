@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <script>
+        var emp = [
+            {name : 'Jay', sal : '10000', age : '20'},
+            {name : 'Dhruv', sal : '80000', age : '18'},
+            {name : 'Nehal', sal : '60000', age : '22'},
+        ];
+        console.table(emp);
+
+        
+        var sorted = emp.sort(function (a, b){
+
+            return b.sal - a.sal;
+        });
+        console.table(sorted);
+
+        var ageSort = emp.sort((a, b) => {
+            return a.age - b.age;
+        });
+
+        console.table(ageSort);
+
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>

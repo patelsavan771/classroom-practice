@@ -1,0 +1,65 @@
+<servlet>
+        
+        <servlet-name>servletcontext</servlet-name>
+        <servlet-class>test.servletcontext</servlet-class>
+        
+        
+        
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>servletcontext</servlet-name>
+        <url-pattern>/servletcontext</url-pattern>
+        
+        
+    </servlet-mapping>
+    
+    <context-param>
+        <param-name>contextval</param-name>
+        <param-value>1234</param-value>
+    </context-param>
+
+-----------------------------------------------------------------------------------------------------------
+
+package test;
+
+import jakarta.servlet.GenericServlet;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+public class servletcontext extends GenericServlet
+{
+    public ServletContext sct;
+  public void init(ServletConfig sc)
+  
+  {
+    sct=sc.getServletContext();
+  }
+    public void service(ServletRequest req, ServletResponse res)throws IOException,ServletException
+    {
+        PrintWriter pw=res.getWriter();
+        res.setContentType("text/html");
+        
+        int contextval=Integer.parseInt(sct.getInitParameter("contextval"));
+        
+        pw.println("context variable value:"+contextval);
+        pw.println("<br>");
+        pw.println("server version:"+sct.getServerInfo());
+        pw.close();
+    }
+    
+    public void destroy()
+    {
+        
+    }
+    
+        
+    }
+
+

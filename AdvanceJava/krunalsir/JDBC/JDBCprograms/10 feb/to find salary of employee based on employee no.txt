@@ -1,0 +1,12 @@
+create or replace procedure getempinfo(eno in number,esalary out number)
+as 
+begin
+select emp_salary into esalary from emp where emp_no=eno;
+end;
+/
+
+execute:
+
+	sql> variable esal number
+	sql> execute getempinfo(1,:esal);
+	sql> print esal

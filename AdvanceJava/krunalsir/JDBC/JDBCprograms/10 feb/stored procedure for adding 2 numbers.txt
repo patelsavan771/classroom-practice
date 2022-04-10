@@ -1,0 +1,15 @@
+create or replace procedure add_proc(x in number,y in number,z out number)
+as
+begin
+z:=x+y;
+end;
+/
+
+for execution:
+
+sql> variable sum number;
+
+sql> execute add_proc(100,200,:sum);
+
+sql> print sum
+

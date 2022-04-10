@@ -1,0 +1,9 @@
+Connection URL: 
+The connection URL for the oracle10G database is jdbc:oracle:thin:@localhost:1521:xe 
+where jdbc is the API,
+ oracle is the database,
+ thin is the driver, 
+localhost is the server name on which oracle is running, 
+we may also use IP address, 
+1521 is the port number and
+ XE is the Oracle service name.

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <!-- onclick -->
+    <div class="div" onclick="fun(this)">onclick</div>
+    <script>
+        function fun(obj) {
+            obj.innerHTML = "clicked!";
+        }
+    </script>
+
+    <!-- onchange -->
+    <!-- called only if content is changed -->
+    <input type="text" id="i1" onchange="change()">
+    <script>
+        function change() {
+            obj = document.getElementById('i1');
+            obj.value = obj.value.toUpperCase();
+        }
+    </script>
+
+    <!-- onblur -->
+    <!-- called every time you losse focus  -->
+    <input type="text" id="i2" onblur="myBlur()">
+    <script>
+        function myBlur() {
+            obj = document.getElementById('i2');
+            obj.value = obj.value + "@gmail.com";
+        }
+    </script>
+
+    <!-- onmouseover & onmouseout -->
+
+    <h1 onmouseover="this.style.backgroundColor = 'yellow'" onmouseout="this.style.backgroundColor='white'">Heading</h1>
+
+
+    <!-- onfocus -->
+
+    <input type="text" onfocus="this.style.backgroundColor='lightblue'">
+    <input type="text">
+</body>
+
+</html>

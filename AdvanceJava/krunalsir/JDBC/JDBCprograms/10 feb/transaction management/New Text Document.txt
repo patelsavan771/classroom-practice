@@ -1,0 +1,9 @@
+transaction management :
+
+methods:
+
+	1) con.setAutoCommit(false);
+
+	2) con.commit();
+
+	3) con.rollback();

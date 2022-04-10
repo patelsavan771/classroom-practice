@@ -1,0 +1,41 @@
+import java.io.*;
+import java.net.*;
+
+class Client
+{
+	public static void main(String args[])throws Exception
+	{
+
+		System.out.println("Enter somthing to start communication..");
+			
+		while(true)
+		{
+	
+		Socket s=new Socket("localhost",5555);
+
+		InputStreamReader is=new InputStreamReader(System.in);
+		BufferedReader user_input= new BufferedReader(is);	
+
+		InputStreamReader is1=new InputStreamReader(s.getInputStream());
+		BufferedReader server_input= new BufferedReader(is1);	
+
+		String str,str1;		
+
+		OutputStreamWriter os=new OutputStreamWriter(s.getOutputStream());
+		PrintWriter pw= new PrintWriter(os);
+		pw.println(str);
+		pw.flush();
+		
+		
+		str=user_input.radLine();
+
+		str1=server_input.readLine(); 
+	
+		System.out.println("str1");
+
+		s.close();
+		}		
+	}
+	
+  
+}

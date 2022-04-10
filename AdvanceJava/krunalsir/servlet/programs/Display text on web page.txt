@@ -1,0 +1,43 @@
+
+package com.servlets;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.*;
+
+public class firstservlet extends HttpServlet 
+{
+       
+  
+        public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
+        {
+           response.setContentType("text/html");
+           PrintWriter out=response.getWriter();
+           out.println("<html>");
+           out.println("<head>");
+           out.println("<title>my first servlet</title>");
+           out.println("<body>");
+           out.println("<h1>hello h r u?</h1>");
+           out.println("<h2>i am enjoying this servlet application</h2>");
+           out.println("<h3>see u later</h3>");
+           out.println("</body>");
+           out.println("</html>");
+        }
+    
+}
+------------------------------------------------------------------------------------------------
+web.xml
+
+ <servlet>
+        <servlet-name>firstservlet</servlet-name>
+        <servlet-class>com.servlets.firstservlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        
+        <servlet-name>firstservlet</servlet-name>
+        <url-pattern>/firstservlet</url-pattern>
+        
+    </servlet-mapping>

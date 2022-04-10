@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+</head>
+<body>
+    <form name='myForm' action="xyz.html" onsubmit="return validate()" method="get" >
+        MObile no : <input type="text" name="mo" id="fname"><br>
+        password:
+        <input type="password" name="password" id="fname">
+
+        <input type="submit" value="click me">
+    
+    </form>
+
+    <script>
+        function validate() {
+            x = document.myForm.mo.value;
+            y = document.myForm.password.value;
+            // alert(x);
+            if(x.length != 10 || isNaN(x)) {
+                alert('enter valid mo no.');
+                return false;
+            }
+
+            if(y.length < 6 || y.length > 12) {
+                alert('enter valid password.');
+                return false;
+            }
+            
+            return true;
+        }
+    </script>
+</body>
+</html>

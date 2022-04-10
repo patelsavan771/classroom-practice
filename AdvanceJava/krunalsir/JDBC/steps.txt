@@ -1,0 +1,31 @@
+import java.sql.*;
+
+
+1) load the driver:
+	Class.forname("driver_name")
+			("oracle.jdbc.OracleDriver")
+
+2) create a connection:
+	Connection con=DriveManager.getConnection("url","username","pwd");
+						("jdbc:oracle:thin:@localhost:1521:xe","system","root");
+
+3) create query, Statement, PreparedStatment,CallableStatement
+	ex. String q="select * from student";
+
+	Statement stmt=con.createStatement();
+
+	ResultSet set=stmt.executeQuery(q);
+
+4) Process the data:
+	while(set.next())
+	{
+		//for no. of rows.
+		int id=set.getInt("StudentID");
+		String name=set.getString("studentname");
+		System.out.println(id);
+		System.out.println(name);
+	}
+
+5) close the connection:
+		con.close();
+		

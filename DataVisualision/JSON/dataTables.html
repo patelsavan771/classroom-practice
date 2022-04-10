@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table 3</title>
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <script>
+        $(function() {
+            $('#sales').dataTable({
+                // paging:false,
+                // ordering:false,ls
+                order:[[2,'desc']],  // for decending ordering 
+                // info:false,
+            });
+        })
+    </script>
+    <style>
+
+        thead {
+            background-color : rgb(133, 35, 35);
+        }
+        
+        tbody {
+            background-color: rgb(228, 228, 74);
+        }
+        
+        tfoot {
+            background-color: rgb(105, 105, 226);
+        }
+
+    
+    table, th, td {
+        padding: 5px;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    </style>
+    
+</head>
+<body>
+    
+    
+    <table border="1" id="sales" class="row-border hover"> 
+        <!-- row-border, order-column -->
+        <thead>
+            <tr>
+                <th>Region</th>
+                <th>Employee</th>
+                <th>Customer</th>
+                <th>Sales</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>a</td>
+                <td>10</td>
+                <td>1000</td>
+                <td>6156</td>
+                <td>651</td>
+            </tr>
+            <tr>
+                <td>b</td>
+                <td>100</td>
+                <td>2000</td>
+                <td>516</td>
+                <td>61566</td>
+            </tr>
+            <tr>
+                <td>c</td>
+                <td>123</td>
+                <td>1500</td>
+                <td>1561</td>
+                <td>5641</td>
+            </tr>
+            <tr>
+                <td>d</td>
+                <td>121</td>
+                <td>1564</td>
+                <td>451</td>
+                <td>65910</td>
+            </tr>
+            <tr>
+                <td>e</td>
+                <td>152</td>
+                <td>4586</td>
+                <td>4894</td>
+                <td>213465</td>
+            </tr>
+            <tr>
+                <td>f</td>
+                <td>123</td>
+                <td>156612</td>
+                <td>9196</td>
+                <td>19649</td>
+            </tr>
+            <tr>
+                <td>g</td>
+                <td>453</td>
+                <td>1263</td>
+                <td>9419</td>
+                <td>91954</td>
+            </tr>
+            <tr>
+                <td>h</td>
+                <td>12</td>
+                <td>651</td>
+                <td>12544</td>
+                <td>54854</td>
+            </tr>
+            <tr>
+                <td>i</td>
+                <td>17</td>
+                <td>156</td>
+                <td>121</td>
+                <td>54214</td>
+            </tr>
+            <tr>
+                <td>j</td>
+                <td>18</td>
+                <td>1561</td>
+                <td>545</td>
+                <td>5488</td>
+            </tr>
+            <tr>
+                <td>a</td>
+                <td>10</td>
+                <td>1000</td>
+                <td>6156</td>
+                <td>651</td>
+            </tr>
+            <tr>
+                <td>b</td>
+                <td>100</td>
+                <td>2000</td>
+                <td>516</td>
+                <td>61566</td>
+            </tr>
+            <tr>
+                <td>c</td>
+                <td>123</td>
+                <td>1500</td>
+                <td>1561</td>
+                <td>5641</td>
+            </tr>
+            <tr>
+                <td>d</td>
+                <td>121</td>
+                <td>1564</td>
+                <td>451</td>
+                <td>65910</td>
+            </tr>
+            <tr>
+                <td>e</td>
+                <td>152</td>
+                <td>4586</td>
+                <td>4894</td>
+                <td>213465</td>
+            </tr>
+            <tr>
+                <td>f</td>
+                <td>123</td>
+                <td>156612</td>
+                <td>9196</td>
+                <td>19649</td>
+            </tr>
+            <tr>
+                <td>g</td>
+                <td>453</td>
+                <td>1263</td>
+                <td>9419</td>
+                <td>91954</td>
+            </tr>
+            <tr>
+                <td>h</td>
+                <td>12</td>
+                <td>651</td>
+                <td>12544</td>
+                <td>54854</td>
+            </tr>
+            <tr>
+                <td>i</td>
+                <td>17</td>
+                <td>156</td>
+                <td>121</td>
+                <td>54214</td>
+            </tr>
+            <tr>
+                <td>j</td>
+                <td>18</td>
+                <td>1561</td>
+                <td>545</td>
+                <td>5488</td>
+            </tr>
+            <tr>
+                <td>a</td>
+                <td>10</td>
+                <td>1000</td>
+                <td>6156</td>
+                <td>651</td>
+            </tr>
+            <tr>
+                <td>b</td>
+                <td>100</td>
+                <td>2000</td>
+                <td>516</td>
+                <td>61566</td>
+            </tr>
+            <tr>
+                <td>c</td>
+                <td>123</td>
+                <td>1500</td>
+                <td>1561</td>
+                <td>5641</td>
+            </tr>
+            <tr>
+                <td>d</td>
+                <td>121</td>
+                <td>1564</td>
+                <td>451</td>
+                <td>65910</td>
+            </tr>
+            <tr>
+                <td>e</td>
+                <td>152</td>
+                <td>4586</td>
+                <td>4894</td>
+                <td>213465</td>
+            </tr>
+            <tr>
+                <td>f</td>
+                <td>123</td>
+                <td>156612</td>
+                <td>9196</td>
+                <td>19649</td>
+            </tr>
+            <tr>
+                <td>g</td>
+                <td>453</td>
+                <td>1263</td>
+                <td>9419</td>
+                <td>91954</td>
+            </tr>
+            <tr>
+                <td>h</td>
+                <td>12</td>
+                <td>651</td>
+                <td>12544</td>
+                <td>54854</td>
+            </tr>
+            <tr>
+                <td>i</td>
+                <td>17</td>
+                <td>156</td>
+                <td>121</td>
+                <td>54214</td>
+            </tr>
+            <tr>
+                <td>j</td>
+                <td>18</td>
+                <td>1561</td>
+                <td>545</td>
+                <td>5488</td>
+            </tr>
+
+
+        </tbody>
+    </table>
+    
+</body>
+</html>

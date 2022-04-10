@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 20%;
+            margin: auto;
+            border: 2px solid black;
+            padding: 50px;
+        }
+        #heading {
+            text-align: center;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="heading">Login</h1>
+        <form action="login" method="post">
+            <label for='username'>username : </label>
+            <input type='text' name ='username' id='username'><br><br>
+            <label for='password'>password : </label>
+            <input type='text' name ='password' id='password'><br><br>
+            <input type='submit' value='Submit'>
+        </form>
+    </div>
+</body>
+</html>

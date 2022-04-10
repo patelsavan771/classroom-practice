@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server</title>
+    <script scr="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        // alert("in");
+        $.getJSON("http://127.0.0.1:8887//sample.json", function(data) {
+            $.each(data.sales, function (k, v) {
+                var reg = v.region;
+                var emp = v.emp;
+                var amt = v.amount;
+                document.write("amount : " + amt + "<br>Region : " + reg + "<br>Emp : " + emp);
+
+            });
+        });
+    </script>
+</body>
+
+</html>
