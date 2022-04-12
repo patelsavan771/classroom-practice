@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="d3.v6.min.js"></script>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+<script>
+var myData1=[10,30,50];
+var sel=d3.select('body')
+          .selectAll('p')
+         
+            sel.data(myData1)//data method is used for dataBinding method
+               .join('p')  
+               .text(function (d)
+                   {
+                       return d;
+                   })
+                   .style('font-size',function (a){
+                       return a+'px';
+                   });
+                     
+</script>            
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>read json</title>
+
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script>
+        d3.csv("http://127.0.0.1:8887/ReadingJSON/sample.json", function(data) {
+            console.log(data);
+            document.write(data["0"].region + " " );
+            // document.write(f[1].Name + " " + f[1].Age);
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

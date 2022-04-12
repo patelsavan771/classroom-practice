@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>click below button to change input type</p>
+    <form>
+        <input type="text" value="myName">
+    </form>
+    <button onclick="clickme()">try it</button>
+    <script>
+        function clickme(){
+            var a=document.getElementsByTagName("input");
+            a[0].setAttribute("type","text");
+            a[0].setAttribute("value","newName");
+        }
+    </script>
+</body>
+</html>

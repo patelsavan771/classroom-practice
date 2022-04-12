@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="d3.v6.min.js"></script>
+</head>
+<body>
+    <svg width="500" height="500">
+        <g>
+        <circle r=30 cx="50" cy="50" fill="orange"></circle>
+        <line x1="50" y1="80" stroke="blue" x2="50" y2="120"></line>
+        <rect x="20" y="120" width="60" height="30" fill="grey"></rect>
+        </g>
+    </svg>
+</body>
+<script>
+    d3.select('g')
+      .attr('transform','translate(200,200) rotate(0,300,300) scale(3,1.5)');
+</script>
+
+</html>

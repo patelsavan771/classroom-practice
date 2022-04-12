@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #remove{
+            background-color: aqua;
+        }
+        #xyz{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <p id="remove">thats para</p>
+    <p id="xyz">thats new para</p>
+    <button onclick="clickme()">try</button>
+    <script>
+          function clickme(){
+            var a=document.getElementsByTagName("p");
+              a[1].removeAttribute("id");
+
+          }
+    </script>
+
+</body>
+</html>

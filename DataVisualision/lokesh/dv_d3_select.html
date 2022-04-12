@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="d3.v6.min.js"></script>
+</head>
+<body>
+    <div>hello</div>
+    <div id="myDiv">how are you</div>
+    <div class="myClass">have a nice day!</div>
+</body>
+<script>
+    d3.select('div')
+    .text('welcome');
+    d3.select('#myDiv')
+    .text('I am fine');
+    d3.select('.myClass')
+    .html('<h> BYE </h>');
+    // d3.selectAll('div')
+    // .text('seeYou');
+</script>
+</html>

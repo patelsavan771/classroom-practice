@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="d3.v6.min.js"></script>
+</head>
+<body>
+    <svg height="800" width="800"></svg>
+    <rect></rect>
+    <rect></rect>
+    <rect></rect>
+    <rect></rect>
+</body>
+<script>
+       var mydata=[
+       {'name': 'asia','population':9600000},
+        {'name': 'europe','population':8400000},
+        {'name': 'USA','population':8200000},
+        {'name': 'africa','population':6400000},
+       ];
+       d3.select('body')
+         .select('svg')
+         .selectAll('rect')
+         .data(mydata)
+         .join('rect')
+         .attr('x',100)
+         .attr('y',(d,i)=>(i+1)*100)
+         .attr('height',70)
+        //  .attr('width',(d)=>d*10)
+         .attr('fill','yellow');
+        
+       d3.select('body')
+         .select('svg')
+         .selectAll('text')
+         .data(mydata)
+         .join('text')
+         .attr('x',150)
+         .attr('y',(d,i)=>(i+1)*100+40)
+         .text((d)=>d.name)
+         .attr('fill','red')
+</script>
+</html>

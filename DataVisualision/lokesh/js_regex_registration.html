@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validate form</title>
+</head>
+<body>
+    <form name="myForm" >
+        Name : <input type="text" name="name" id="name"><br>
+        Phone No. : <input type="text" name="phone" id="phone"><br>
+        Email : <input type="text" name="email" id="email"><br>
+       
+    </form>
+    <button onclick="validate()">tryIt</button>
+
+
+    <script>
+        function validate() {
+            // patEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,})/;
+           var u = document.getElementById("name");
+            patName = /^[A-Za-z]+$/;
+            var w= document.getElementById("phone");
+            patPhone = /^\d{10}$/;
+           var v= document.getElementById("email");
+            patEmail = /[A-z0-9.]+@[A-z0-9.]+\.([A-z]{2,})/i;
+           
+           
+            if(!patName.test(u.value)) {
+                alert("enter valid name");
+                
+            }
+            else if(!patPhone.test(w.value)) {
+                alert("enter valid 10 digit mobile number");
+                ; 
+            }
+            
+            else if(!patEmail.test(v.value)) {
+                alert("enter valid email");
+                 
+            }
+            else{
+                alert("successful");
+            }
+
+        }
+    </script>
+</body>
+</html>

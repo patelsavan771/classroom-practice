@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <table border="1" id="SalesBySales">
+        
+        <thead>
+          <tr>
+              <th>Region</th>
+              <th>Sales</th>
+              <th>Mean</th>
+              <th>tax</th>
+              <th>gross_salary</th>
+          </tr>
+       </thead>
+      <tbody>
+          <tr>
+              <td>north</td>
+              <td class="emp_sales">10000</td>
+              <td>150</td>
+              <td class="taxes">5</td>
+              <td class="gross_salary"></td>
+          </tr>
+          <tr>
+              <td>south</td>
+              <td class="emp_sales">30000</td>
+              <td>160</td>
+              <td class="taxes">5</td>
+              <td class="gross_salary"></td>
+          </tr>
+          <tr>
+              <td>west</td>
+              <td class="emp_sales">125000</td>
+              <td>142</td>
+              <td class="taxes">5</td>
+              <td class="gross_salary"></td>
+          </tr>
+          <tr>
+              <td>east</td>
+              <td class="emp_sales">25000</td>
+              <td>250</td>
+              <td class="taxes">5</td>
+              <td class="gross_salary"></td>
+          </tr>
+          <tr>
+              <td>southWest</td>
+              <td class="emp_sales">35000</td>
+              <td>300</td>
+              <td class="taxes">5</td>
+              <td class="gross_salary"></td>
+          </tr>
+          </tbody>
+         <tfoot>
+             <tr>
+                 <th>sum</th>
+                 <td id="total_sales"></td>
+             </tr>
+         </tfoot> 
+      </table>
+</body>
+<script>
+    $(function(){
+        var total=0;
+        $(".emp_sales").each(function()
+        {   
+            total=total+parseInt($(this).html());
+        });
+    $("#total_sales").html(total);
+      $("tr").each(function()
+      {
+       x=parseInt($(".emp_sales").html())-(parseInt($(".taxes").html())*parseInt($(".emp_sales").html())/100);
+       $(".gross_salary").html(x);
+      })    
+    
+    });
+</script>
+</html>

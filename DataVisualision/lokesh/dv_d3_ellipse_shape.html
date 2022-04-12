@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="d3.v6.min.js"></script>
+</head>
+<body>
+    <script>
+        var mysvg=d3.select('body')
+                    .append('svg')
+                    .attr('width',1000)
+                    .attr('height',1000);
+        var group=mysvg.append('g');
+         for(i=0;i<36;i++)
+         {
+            group.append('ellipse')
+                 .attr('cx',200)
+                 .attr('cy',200)
+                 .attr('rx',150)
+                 .attr('ry',30)
+                 .attr('fill','red')
+                 .attr('fill-opacity',0.75)
+                 .attr('transform','rotate('+i*10+',200,200)');
+            mysvg.append('text')
+                 .attr('x',100)
+                 .attr('y',220)
+                 .text("hello lokesh")
+                 .attr('fill','yellow')
+                 .attr('stroke','blue')
+                 .style('font-size','40px');             
+         }
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+{
+    "0" : { "region": "north", "emp": 150, "amount": 15000 },   
+    "1" : { "region": "south", "emp": 300, "amount": 25000 },   
+    "2" : { "region": "west", "emp": 250, "amount": 30000 }, 
+    "3" : { "region": "north", "emp": 150, "amount": 15000 },   
+    "4" : { "region": "south", "emp": 300, "amount": 25000 },   
+    "5" : { "region": "west", "emp": 250, "amount": 30000 }   
+}

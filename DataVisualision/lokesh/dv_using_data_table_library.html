@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="http://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+    <link href="http://cdn.datatables.net/1.10.21/css/jquery.dataTables.css" rel="StyleSheet">
+    <style>
+        tbody th{
+            background-color: aqua;
+        }
+        thead th{
+            background-color: brown;
+
+        }
+        tfoot th{
+            background-color: blueviolet;
+        }
+        .current-col{
+            background-color: green;
+        }
+        .current-row{
+            background-color: red;
+
+        }
+    </style>
+   <script>
+          $(function(){
+              $('#SalesBySales').dataTable();
+          });
+    </script>
+</head>
+<body>
+    <table border="1" id="SalesBySales">
+        
+         <thead>
+           <tr class="HeaderRow">
+               <th scope="col">Region</th>
+               <th scope="col">Sales</th>
+               <th scope="col">Mean</th>
+           </tr>
+        </thead>
+       <tbody>
+           <tr class="TableRow">
+               <th scope="row">north</th>
+               <td>10000</td>
+               <td>150</td>
+           </tr>
+           <tr class="TableRow">
+               <th scope="row">south</th>
+               <td>30000</td>
+               <td>160</td>
+           </tr>
+           <tr  class="TableRow">
+               <th scope="row">west</th>
+               <td>125000</td>
+               <td>142</td>
+           </tr>
+           <tr class="TableRow">
+               <th scope="row">east</th>
+               <td>25000</td>
+               <td>250</td>
+           </tr>
+           <tr  class="TableRow">
+               <th scope="row">southWest</th>
+               <td>35000</td>
+               <td>300</td>
+           </tr>
+           </tbody>
+          <tfoot>
+              <tr class="TableRow">
+                  <th>sum</th>
+                  <td colspan="2">112500</td>
+              </tr>
+          </tfoot> 
+       </table>
+</body>
+<script>
+    $(document).ready(
+        function()
+        {
+            
+            $('tr').hover(
+                function()
+                {
+                    console.log("Hello");
+                    $(this).find('th,td').addClass('current-row');
+                },
+                function()
+                {
+                    $(this).find('th, td').removeClass('current-row');
+                }
+            );
+
+            $('th,td').hover(
+                function(){
+                    var i=$(this).index();
+                    i=i+1;
+                    $('th,td').filter(':nth-child('+i+')').addClass('current-col');
+
+                },
+                function(){
+                    var i=$(this).index();
+                    i=i+1;
+                    $('th,td').filter(':nth-child('+i+')').removeClass('current-col');
+
+                }
+
+            );
+        }
+    );
+</script>
+</html>

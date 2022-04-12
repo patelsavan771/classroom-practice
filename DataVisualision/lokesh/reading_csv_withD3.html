@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="d3.v6.min.js"></script>
+</head>
+<body>
+    <script>
+        d3.csv("http://127.0.0.1:8887/person.csv").then(function(data){
+            for(i=0;i<data.length;i++)
+            {
+              document.write("<br/> Name:"+data[i].Name);
+              document.write("<br/> age:"+data[i].Age);
+              document.write("<br/> email:"+data[i].Email);
+            }
+        });
+    </script>
+</body>
+</html>

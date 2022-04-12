@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        name:-<input type="text" id="name">
+        password<input type="text" id="password">
+
+    </form>
+   <button onclick="fun()">try</button>
+</body>
+<script>
+     function fun(){
+    var a=document.getElementById("name");
+    var b=document.getElementById("password");
+    var regex=/^_|^@|^(0-9)/;
+   
+
+    
+        if(a.value==""||b.value=="")
+    {
+        alert("invalid name or password");
+    }
+    
+
+    
+    else if(b.length<6||b.length>12) {
+         alert("invalid length of password");
+    }
+    else if(regex.test(a)){
+          alert("username started with _or@orNumber");
+    }
+}
+</script>
+</html>

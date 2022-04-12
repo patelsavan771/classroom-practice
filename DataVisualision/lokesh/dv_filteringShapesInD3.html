@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="d3.v6.min.js"></script>
+</head>
+<body>
+    
+</body>
+<script>
+     var mysvg=d3.select('body')
+                    .append('svg')
+                    .attr('width',2000)
+                    .attr('height',2000);
+         var group=mysvg.append('g');
+         for(i=0;i<36;i++)
+         {
+             group.append('rect')
+                  .attr('x','300')
+                  .attr('y','300')
+                  .attr('width','30')
+                  .attr('height','20')
+                  .attr('transform','rotate('+i*10+',200,200)');
+         }
+         group.selectAll('rect')
+              .filter(':nth-child(odd)')
+              .attr('fill','pink');
+         group.selectAll('rect')
+              .filter(':nth-child(even)')
+              .attr('fill','grey');   
+        group.selectAll('rect')
+             .filter(':first-child')
+             .attr('fill','green');  
+                        
+</script>
+</html>

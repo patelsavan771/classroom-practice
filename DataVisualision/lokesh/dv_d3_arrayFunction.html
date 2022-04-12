@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="d3.v6.min.js"></script>
+    <style>
+
+
+
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <button onclick="Fun1()">add</button>
+    <button onclick="Fun2()">remove</button>
+    <button onclick="Fun3()">sort asc</button>
+    <button onclick="Fun4()">sort descsc</button>
+    <div id="a"></div>
+</body>
+<script>
+    var arr = [1, 2, 3, 4, 5];
+    d3.select('div').text(arr);
+
+
+    // document.write("array is:-"+arr);
+    // document.write("maximum:-"+d3.max(arr));
+    // document.write("minimum:-"+d3.min(arr));
+    // document.write("total elements"+arr.length);
+
+    var Fun1 = () => {
+        arr.push(6);
+        d3.select('#a').text("Adding Element:-" + arr);
+    }
+    var Fun2 = () => {
+        arr.pop();
+        d3.select('#a').text("removing Element:-" + arr);
+    }
+    var Fun3 = () => {
+        d3.select('#a').text("sorted array is:-" + arr.sort(function (a, b) { return a - b; }));
+    }
+    var Fun4 = () => {
+        d3.select('#a').text("descending sorted arr is:-" + arr.sort(function (a, b) { return b - a; }));
+    }
+    d3.select('div')
+        .on('mouseover', function () {
+
+            d3.select(this).style('font-size', '20px');
+
+        })
+
+        .on('mouseout', function () {
+
+            d3.select(this).style('font-size', '16px');
+        });
+    d3.selectAll('button')
+        .on('mouseover', function () {
+
+            d3.select(this).style('font-size', '20px');
+
+        })
+
+        .on('mouseout', function () {
+
+            d3.select(this).style('font-size', '16px');
+        });
+
+</script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="d3.v6.min.js"></script>
+</head>
+<body>
+    <div>hello</div>
+    <div id="myDiv">how are you</div>
+    <div class="myClass">have a nice day!</div>
+</body>
+<script>
+    d3.select('.myClass')
+    .attr('id','thirdDiv')
+    .style('color','red');
+    d3.select('div')
+    .attr('style',"background:red")
+    .classed('myClass',true);
+    d3.select('#thirdDiv')
+    .style('background','pink')
+    .classed('myClass',false);
+    d3.select('#myDiv')
+    .append('b')
+    .append('i')
+    .text('second practical');
+</script>
+</html>
